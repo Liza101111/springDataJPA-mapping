@@ -1,6 +1,7 @@
 package com.springprojects.springdatajpamapping.controller;
 
 import com.springprojects.springdatajpamapping.dto.OrderRequest;
+import com.springprojects.springdatajpamapping.dto.OrderResponse;
 import com.springprojects.springdatajpamapping.entity.Customer;
 import com.springprojects.springdatajpamapping.repository.CustomerRepository;
 import com.springprojects.springdatajpamapping.repository.ProductRepository;
@@ -25,5 +26,10 @@ public class OrderController {
     @GetMapping("/findAllOrders")
     public List<Customer> findAllOrders(){
         return customerRepository.findAll();
+    }
+
+    @GetMapping("/getInfo")
+    public List<OrderResponse> getJoinInformation(){
+        return customerRepository.getJoinInformation();
     }
 }
